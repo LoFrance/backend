@@ -5,5 +5,6 @@ export function createProdConfig() {
     email: process.env.EMAIL ?? '',
     etherealUser: process.env.ETHEREAL_USER ?? '',
     etherealPassword: process.env.ETHEREAL_PASSWORD ?? '',
+    port: parseInt(process.env.SERVER_PORT ?? '5432', 10),
   });
 }

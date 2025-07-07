@@ -3,4 +3,5 @@ export type AppConfig = {
   email: string;
   etherealUser: string;
   etherealPassword: string;
+  port: number;
 };

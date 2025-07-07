@@ -1,9 +1,11 @@
 import { Router, Request, Response } from 'express';
 import { saveUser } from './service';
+import { assertIsEmail } from '../lib/email';
 
 const userRouter = Router();
 
 userRouter.post('/api/users', async (req: Request, res: Response) => {
+  console.log('Request incoming...', req.body);
   try {
     if (!req.body) {
       console.log('Bad request, body is empty');
@@ -11,9 +13,10 @@ userRouter.post('/api/users', async (req: Request, res: Response) => {
       return;
     }
     const email = req.body.email;
-    if (!email) {
-      console.log('Bad request, email is not provided');
-      res.status(400).json({ message: 'Failure: field email is required' });
+
+    if (!email || !assertIsEmail(email)) {
+      console.log('Bad request, email is not provided or not valid!');
+      res.status(400).json({ message: 'Failure: field email is required or is not a valid email' });
       return;
     }
     const name = email.split('@')[0];

@@ -8,14 +8,15 @@ sequelize.sync({ force: true });
 
 const config = appConfig;
 const app = express();
+const port = appConfig.port;
 app.use(express.json());
 
 app.use(healthRouter);
 app.use(userRouter);
 
-app.listen(3000, () => {
+app.listen(port, () => {
   const basePath = config.basePath;
-  console.log(`Server running on port 3000 on ${basePath}`);
+  console.log(`Server running on port ${port} on ${basePath}`);
 });
 
 export default app;
