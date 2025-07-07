@@ -22,6 +22,9 @@ UserModel.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    registrationToken: {
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,

@@ -6,7 +6,7 @@
     "format": "prettier --write .",
     "lint": "npx --node-options='--experimental-strip-types' eslint --flag unstable_native_nodejs_ts_config ./src --ext .ts",
     "lint:fix": "npx --node-options='--experimental-strip-types' eslint --flag unstable_native_nodejs_ts_config ./src --fix",
-    "start": "tsx watch src/index.ts"
+    "start": "tsx --env-file=.env.local --watch src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,11 +16,13 @@
     "@types/express": "^5.0.3",
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
+    "nodemailer": "^7.0.4",
     "sequelize": "^6.37.7",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@types/node": "^24.0.4",
+    "@types/nodemailer": "^6.4.17",
     "@typescript-eslint/eslint-plugin": "^8.35.0",
     "@typescript-eslint/parser": "^8.35.0",
     "eslint": "^9.29.0",
