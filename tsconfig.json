@@ -15,9 +15,8 @@
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "incremental": true,
-  
-    "typeRoots": ["./.yarn/sdks/typescript/lib", "./node_modules/@types"]
-  
+
+    "typeRoots": ["./node_modules/@types"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
